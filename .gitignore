@@ -87,6 +87,11 @@ StyleCopReport.xml
 *.pidb
 *.svclog
 *.scc
+.gitattributes
+PharmacyBillingSystem.sln
+PharmacyBillingSystem.vcxproj
+PharmacyBillingSystem.vcxproj.user
+PharmacyBillingSystem.vcxproj.filters
 
 # Chutzpah Test files
 _Chutzpah*
