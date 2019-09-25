@@ -1,0 +1,1 @@
+void validateChoice(unsigned short);

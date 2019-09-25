@@ -1,0 +1,237 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{18C93C8E-2585-4CB1-AAD9-424785D7CE60}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>PharmacyBillingSystem</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>C:\c++ connector\mysql-connector-c++-8.0.17-win32\include\jdbc;C:\c++ connector\mysql-connector-c++-8.0.17-win32\include;C:\Windows\mysql-5.7.27-win32\include;C:\Windows\MySQL Connector\lib64\vs14;C:\Windows\MySQL Connector\lib64;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>C:\Windows\MySQL Server\include;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\boost\boost_1_71_0;C:\c++ connector\mysql-connector-c++-8.0.17-win32\include;C:\Windows\mysql-5.7.27-win32\include;C:\c++ connector\mysql-connector-c++-8.0.17-win32\include\jdbc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>C:\boost\boost_1_71_0;C:\c++ connector\mysql-connector-c++-8.0.17-win32\lib\vs14;C:\c++ connector\mysql-connector-c++-8.0.17-win32\lib;C:\Windows\mysql-5.7.27-win32\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>libmysql.lib;mysqlcppconn-static.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\boost\boost_1_71_0;C:\Windows\MySQL Server\include;C:\Windows\MySQL Connector\include\jdbc;C:\Windows\MySQL Connector\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>C:\boost\boost_1_71_0;C:\Windows\MySQL Connector\lib64\vs14;C:\Windows\MySQL Connector\lib64;C:\Windows\MySQL Server\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>mysqlcppconn.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="address.hpp" />
+    <ClInclude Include="add_customer_query.hpp" />
+    <ClInclude Include="add_product.hpp" />
+    <ClInclude Include="add_product_query.hpp" />
+    <ClInclude Include="authentication.hpp" />
+    <ClInclude Include="add_person.hpp" />
+    <ClInclude Include="create_bill.hpp" />
+    <ClInclude Include="create_purchases_query.hpp" />
+    <ClInclude Include="create_person_type.hpp" />
+    <ClInclude Include="city.hpp" />
+    <ClInclude Include="connect.hpp" />
+    <ClInclude Include="create_database_relations.hpp" />
+    <ClInclude Include="create_person_query.hpp" />
+    <ClInclude Include="customer.hpp" />
+    <ClInclude Include="decrement_quantity.hpp" />
+    <ClInclude Include="get_product.hpp" />
+    <ClInclude Include="global_counter.hpp" />
+    <ClInclude Include="main.hpp" />
+    <ClInclude Include="make_purchase.hpp" />
+    <ClInclude Include="menu.hpp" />
+    <ClInclude Include="menu_output.hpp" />
+    <ClInclude Include="person.hpp" />
+    <ClInclude Include="person_create_query.hpp" />
+    <ClInclude Include="pharmacist.hpp" />
+    <ClInclude Include="pharmacist_option.hpp" />
+    <ClInclude Include="pharmacist_option_output.hpp" />
+    <ClInclude Include="pharmacist_output.hpp" />
+    <ClInclude Include="product.hpp" />
+    <ClInclude Include="purchase.hpp" />
+    <ClInclude Include="execute_query.hpp" />
+    <ClInclude Include="result.hpp" />
+    <ClInclude Include="sign_in.hpp" />
+    <ClInclude Include="create_person.hpp" />
+    <ClInclude Include="sign_in_query.hpp" />
+    <ClInclude Include="street.hpp" />
+    <ClInclude Include="type.hpp" />
+    <ClInclude Include="create_purchases.hpp" />
+    <ClInclude Include="is_menu_choice_valid.hpp" />
+    <ClInclude Include="is_product_available.hpp" />
+    <ClInclude Include="welcome.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="address.cpp" />
+    <ClCompile Include="add_product.cpp" />
+    <ClCompile Include="add_product_query.cpp" />
+    <ClCompile Include="authentication.cpp" />
+    <ClCompile Include="create_bill.cpp" />
+    <ClCompile Include="create_person_query.cpp" />
+    <ClCompile Include="add_person.cpp" />
+    <ClCompile Include="create_purchase_query.cpp" />
+    <ClCompile Include="decrement_quantity.cpp" />
+    <ClCompile Include="get_product.cpp" />
+    <ClCompile Include="make_purchase.cpp" />
+    <ClCompile Include="menu_output.cpp" />
+    <ClCompile Include="person.cpp" />
+    <ClCompile Include="pharmacist_option.cpp" />
+    <ClCompile Include="pharmacist_output.cpp" />
+    <ClCompile Include="purchase.cpp" />
+    <ClCompile Include="execute_query.cpp" />
+    <ClCompile Include="sign_in.cpp" />
+    <ClCompile Include="city.cpp" />
+    <ClCompile Include="create_database_relations.cpp" />
+    <ClCompile Include="customer.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="menu.cpp" />
+    <ClCompile Include="pharmacist.cpp" />
+    <ClCompile Include="product.cpp" />
+    <ClCompile Include="create_person.cpp" />
+    <ClCompile Include="create_purchases.cpp" />
+    <ClCompile Include="sign_in_query.cpp" />
+    <ClCompile Include="street.cpp" />
+    <ClCompile Include="is_menu_choice_valid.cpp" />
+    <ClCompile Include="is_product_available.cpp" />
+    <ClCompile Include="welcome.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="check_menu_choice.hpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
