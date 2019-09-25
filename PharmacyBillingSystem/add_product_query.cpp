@@ -13,6 +13,6 @@ void addProductQuery(Product product)
 
 	std::string queryMYSQL = "INSERT INTO product(name, price, quantity)\
                               VALUES('" + name + "'," + std::to_string(price) + ", " +std::to_string(quantity) + ");";
-	
+
 	executeQuery(queryMYSQL);
 }
