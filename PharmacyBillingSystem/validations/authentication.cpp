@@ -1,10 +1,10 @@
 #include <string>
-#include "authentication.hpp"
-#include "connect.hpp"
-#include "sign_in.hpp"
-#include "result.hpp"
-#include "global_counter.hpp"
-#include "add_person.hpp"
+#include "validations/authentication.hpp"
+#include "sql/connect.hpp"
+#include "menu/sign_in.hpp"
+#include "sql/result.hpp"
+#include "global/global_counter.hpp"
+#include "create/person utils/add_person.hpp"
 
 MYSQL_RES* result;
 unsigned int counter = 1;

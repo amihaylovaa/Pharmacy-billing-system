@@ -1,11 +1,11 @@
-#include "menu_output.hpp"
-#include "sign_in.hpp"
-#include "pharmacist_option.hpp"
-#include "add_person.hpp"
-#include "pharmacist_output.hpp"
-#include "pharmacist_option_output.hpp"
-#include "person_create_query.hpp"
-#include "type.hpp"
+#include "menu/menu_output.hpp"
+#include "menu/sign_in.hpp"
+#include "menu/pharmacist_menu.hpp"
+#include "menu/pharmacist_menu_output.hpp"
+#include "create/person utils/add_person.hpp"
+#include "create/create_person_type.hpp"
+#include "create/create_person_type.hpp"
+#include "sql/queries/person_create_query.hpp"
 
 personType typePerson;
 

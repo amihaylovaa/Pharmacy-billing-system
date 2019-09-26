@@ -1,4 +1,4 @@
-#include "city.hpp"
+#include "models/city.hpp"
 
 City::City(std::string name_) : name(name_)
 {

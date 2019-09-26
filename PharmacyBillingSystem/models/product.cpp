@@ -1,4 +1,4 @@
-#include "product.hpp"
+#include "models/product.hpp"
 
 Product::Product(std::string name_, double price_, unsigned short quantity_)
 : name(name_)

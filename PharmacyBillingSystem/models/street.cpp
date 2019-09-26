@@ -1,4 +1,4 @@
-#include "street.hpp"
+#include "models/street.hpp"
 
 Street::Street(std::string name_, unsigned short number_, City& city_) : name(name_), city(city_)
 {

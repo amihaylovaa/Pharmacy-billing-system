@@ -1,4 +1,4 @@
-#include "person.hpp"
+#include "models/person.hpp"
 
 Person::Person(std::string firstName_, std::string lastName_, Address& address_)
 	: firstName(firstName_), lastName(lastName_), address(address_)

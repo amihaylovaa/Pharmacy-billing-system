@@ -1,7 +1,7 @@
-#include "is_product_available.hpp"
-#include "execute_query.hpp"
-#include "result.hpp"
-#include "connect.hpp"
+#include "validations/is_product_available.hpp"
+#include "sql/queries/execute_query.hpp"
+#include "sql/result.hpp"
+#include "sql/connect.hpp"
 
 bool isProductAvailable(std::string productName)
 {

@@ -1,4 +1,4 @@
-#include "create_bill.hpp"
+#include "create/create_bill.hpp"
 
 void createBill(std::vector<Purchase>& purchases, unsigned int pharmacistId, unsigned int customerId)
 {

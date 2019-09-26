@@ -1,4 +1,4 @@
-#include "purchase.hpp"
+#include "models/purchase.hpp"
 
 Purchase::Purchase(unsigned short quantity_, Product& product_)
 	: product(product_)

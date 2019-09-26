@@ -1,5 +1,5 @@
 #include <iostream>
-#include "is_menu_choice_valid.hpp"
+#include "validations/is_menu_choice_valid.hpp"
 
 bool isMenuChoiceValid(unsigned short choice)
 {
