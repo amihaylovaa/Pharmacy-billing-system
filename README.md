@@ -1,3 +1,2 @@
-##                                UNDER CONSTRUCTION
-
-                          /Working on feature/organize-source-files /
+##                                UNDER CONSTRUCTION   
+##                        (Working on feature/organize-source-files)
