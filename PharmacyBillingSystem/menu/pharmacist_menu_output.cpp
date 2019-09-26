@@ -9,12 +9,12 @@
 
 void pharmacistOptionOutput(unsigned int pharmacistId, unsigned short result)
 {
-	typePerson = customer;
+	personType = customer;
 	system("cls");
 
 	if (result == 1)
 	{
-		unsigned int userId = signIn(typePerson);
+		unsigned int userId = signIn(personType);
 		getCustomerOrders(pharmacistId, userId);
 	}
 
@@ -22,5 +22,5 @@ void pharmacistOptionOutput(unsigned int pharmacistId, unsigned short result)
 		addProductQuery(addProduct());
 
 	else
-		addPerson(typePerson);
+		addPerson(personType);
 }

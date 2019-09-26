@@ -1,2 +1,2 @@
 #pragma once
-enum personType{pharmacist,customer};
+enum PersonType{pharmacist,customer};

@@ -2,4 +2,4 @@
 #include "global/person_type.hpp"
 #include "models/person.hpp"
 
-void createPersonQuery(Person, personType);
+void createPersonQuery(Person, PersonType);

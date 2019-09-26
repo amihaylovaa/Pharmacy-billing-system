@@ -7,25 +7,25 @@
 #include "create/create_person_type.hpp"
 #include "sql/queries/person_create_query.hpp"
 
-personType typePerson;
+PersonType personType;
 
 void menuOutput(unsigned short choice)
 {    
 	system("cls");
-	typePerson = pharmacist;
+	personType = pharmacist;
 
 	if (choice != 1 && choice != 2)
 		return;
 
 	if (choice == 1)
 	{
-		int pharmacistId = signIn(typePerson);
+		int pharmacistId = signIn(personType);
 		pharmacistOptionOutput(pharmacistId, pharmacistOption());
 	}
 
 	if (choice == 2)
 	{
-		addPerson(typePerson);
+		addPerson(personType);
 		menuOutput(choice = 1);
 	}
 }

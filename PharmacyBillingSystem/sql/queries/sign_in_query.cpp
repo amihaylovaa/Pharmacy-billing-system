@@ -1,7 +1,7 @@
 #include <string>
 #include "sql/queries/sign_in_query.hpp"
 
-std::string signInQuery(personType typeOfPerson, unsigned int id)
+std::string signInQuery(PersonType typeOfPerson, unsigned int id)
 {
 	std::string query;
 

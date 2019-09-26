@@ -5,7 +5,7 @@
 #include "sql/connect.hpp"
 #include "global/person_type.hpp"
 
-void createPersonQuery(Person person, personType typeOfPerson)
+void createPersonQuery(Person person, PersonType typeOfPerson)
 {
 	std::string firstName = person.getFirstName();
 	std::string lastName = person.getLastName();

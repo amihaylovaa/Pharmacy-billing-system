@@ -7,7 +7,7 @@
 #include "models/customer.hpp"
 #include "sql/queries/person_create_query.hpp"
 
-Person createPerson(personType typeOfPerson)
+Person createPerson(PersonType typeOfPerson)
 {
 	std::string firstName = "";
 	std::string lastName = "";
@@ -41,7 +41,7 @@ Person createPerson(personType typeOfPerson)
 	}
 }
 
-void addPerson(personType typeOfPerson)
+void addPerson(PersonType typeOfPerson)
 {
 	Person person(createPerson(typeOfPerson));
 

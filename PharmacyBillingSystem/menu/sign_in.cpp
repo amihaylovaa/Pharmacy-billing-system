@@ -4,7 +4,7 @@
 #include "sql/execute_query.hpp"
 #include "validations/authentication.hpp"
 
-unsigned int signIn(personType typeOfPerson)
+unsigned int signIn(PersonType typeOfPerson)
 {
 	unsigned int id;
 
