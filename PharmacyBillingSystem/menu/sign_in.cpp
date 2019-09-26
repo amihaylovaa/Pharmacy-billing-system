@@ -1,7 +1,7 @@
 #include <iostream>
 #include "menu/sign_in.hpp"
 #include "sql/queries/sign_in_query.hpp"
-#include "sql/queries/execute_query.hpp"
+#include "sql/execute_query.hpp"
 #include "validations/authentication.hpp"
 
 unsigned int signIn(personType typeOfPerson)

@@ -4,12 +4,12 @@
 
 void createRelations()
 {
- 	mysql_query(connection,
+	mysql_query(connection,
 		"CREATE TABLE IF NOT EXISTS city\
 		( id    INT UNSIGNED PRIMARY KEY AUTO_INCREMENT, \
 		  name  VARCHAR(32)  NOT NULL UNIQUE\
 		);"
-		);
+	);
 
 	mysql_query(connection,
 		"CREATE TABLE IF NOT EXISTS street \
@@ -21,7 +21,7 @@ void createRelations()
 		FOREIGN KEY(city_id) REFERENCES city(id) ON DELETE CASCADE,\
         UNIQUE (name, number, city_id)\
 		);"
-		);
+	);
 
 	mysql_query(connection,
 		"CREATE TABLE IF NOT EXISTS address\
@@ -30,7 +30,7 @@ void createRelations()
 		street_id INT UNSIGNED NOT NULL UNIQUE,\
 		FOREIGN KEY(street_id) REFERENCES street(id) ON DELETE CASCADE\
 		);"
-		);
+	);
 
 	mysql_query(connection,
 		"CREATE TABLE IF NOT EXISTS person\
@@ -41,16 +41,15 @@ void createRelations()
 		address_id INT UNSIGNED,\
 		FOREIGN KEY(address_id) REFERENCES address(id) ON DELETE CASCADE \
 		);"
-		);
+	);
 
 	mysql_query(connection,
 		"CREATE TABLE IF NOT EXISTS customer\
 		(\
 		id INT UNSIGNED PRIMARY KEY,\
-		FOREIGN KEY(id) REFERENCES person(id)\
-        ON DELETE CASCADE \
+		FOREIGN KEY(id) REFERENCES person(id) ON DELETE CASCADE \
 		);"
-		);
+	);
 
 
 	mysql_query(connection,
@@ -59,7 +58,7 @@ void createRelations()
 		id            INT UNSIGNED PRIMARY KEY,\
 		FOREIGN KEY(id) REFERENCES person(id) ON DELETE CASCADE\
 		);"
-		);
+	);
 
 	mysql_query(connection,
 		"CREATE TABLE IF NOT EXISTS product\
@@ -69,7 +68,7 @@ void createRelations()
 		price     DOUBLE PRECISION UNSIGNED NOT NULL,\
 		quantity  TINYINT UNSIGNED CHECK(quantity>0)\
 		);"
-		);
+	);
 
 	mysql_query(connection,
 		"CREATE TABLE IF NOT EXISTS purchase\
@@ -83,5 +82,5 @@ void createRelations()
 		FOREIGN KEY(pharmacist_id) REFERENCES pharmacist(id) ON DELETE CASCADE ,\
 		FOREIGN KEY(product_id) REFERENCES product(id)   ON DELETE CASCADE\
 		);"
-		);
+	);
 }

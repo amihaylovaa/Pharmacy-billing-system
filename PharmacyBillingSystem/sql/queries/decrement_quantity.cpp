@@ -1,6 +1,6 @@
 #include <string>
 #include "sql/queries/decrement_quantity.hpp"
-#include "sql/queries/execute_query.hpp"
+#include "sql/execute_query.hpp"
 
 
 void decrementQuantity(std::string productName, unsigned short quantity)

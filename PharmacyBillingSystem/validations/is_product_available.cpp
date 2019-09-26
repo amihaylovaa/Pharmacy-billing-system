@@ -1,5 +1,5 @@
 #include "validations/is_product_available.hpp"
-#include "sql/queries/execute_query.hpp"
+#include "sql/execute_query.hpp"
 #include "sql/result.hpp"
 #include "sql/connect.hpp"
 

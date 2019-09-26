@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include  <vector>
+#include "create/create_bill.hpp"
 #include "create/create_purchases.hpp"
 #include "create/get_customer_orders.hpp"
 #include "create/create_bill.hpp"
@@ -48,4 +49,22 @@ void createPurchases(std::vector<Product>& products, unsigned int pharmacistId, 
 	}
 	createPurchasesQuery(purchases, pharmacistId, userId);
 	createBill(purchases, pharmacistId, userId);
+}
+
+void createBill(std::vector<Purchase>& purchases, unsigned int pharmacistId, unsigned int customerId)
+{
+	double total = 0.00;
+
+	for (Purchase purchase : purchases)
+	{
+		Product product(purchase.getProduct());
+
+		std::cout << product.getName() << std::endl
+			<< purchase.getQuantity() << " x " << product.getPrice() << std::endl;
+		total += product.getPrice() * purchase.getQuantity();
+	}
+
+	std::cout << "Pharmacist: " << pharmacistId << std::endl;
+	std::cout << "Customer: " << customerId << std::endl;
+	std::cout << "Total price :" << total << "lv";
 }

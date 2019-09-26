@@ -1,5 +1,5 @@
 #include "sql/connect.hpp"
-#include "sql/queries/execute_query.hpp"
+#include "sql/execute_query.hpp"
 
 void executeQuery(std::string query)
 {

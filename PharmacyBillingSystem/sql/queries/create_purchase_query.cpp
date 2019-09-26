@@ -1,6 +1,6 @@
 #include <string>
 #include "sql/queries/create_purchases_query.hpp"
-#include "sql/queries/execute_query.hpp"
+#include "sql/execute_query.hpp"
 
 void createPurchasesQuery(std::vector<Purchase>& purchases, unsigned int pharmacistId, unsigned int userId)
 {
@@ -8,8 +8,8 @@ void createPurchasesQuery(std::vector<Purchase>& purchases, unsigned int pharmac
 
 	for (unsigned int i = 0; i < purchases.size(); i++)
 	{
-		  Product product = purchases.at(i).getProduct();
-		  std::string queryMYSQL = "\
+		Product product = purchases.at(i).getProduct();
+		std::string queryMYSQL = "\
           INSERT INTO purchase (product_id, customer_id, pharmacist_id, quantity)\
           SELECT product.id, " + std::to_string(userId) + ", \
           " + std::to_string(pharmacistId) + ", " + std::to_string(purchases.at(i).getQuantity()) + "\
