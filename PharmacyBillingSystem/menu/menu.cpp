@@ -1,6 +1,6 @@
 #include <iostream>
 #include "menu/menu.hpp"
-#include "validations/is_menu_choice_valid.hpp"
+#include "validations/menu_validation.hpp"
 
 unsigned short menu()
 {
