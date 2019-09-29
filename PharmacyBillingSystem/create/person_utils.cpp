@@ -15,8 +15,8 @@ Person createPerson(PersonType typeOfPerson)
 	std::string streetName = "";
 	unsigned short streetNumber = 0;
 
-	std::cout << "                                 Enter first name :"; std::cin >> firstName;
-	std::cout << "                                 Enter last name :"; std::cin >> lastName;
+	std::cout << "                                 Enter first name :"; std::getline(std::cin, streetName);
+	std::cout << "                                 Enter last name :"; std::getline(std::cin, streetName);
 	std::cout << "                                 Enter city name :"; std::cin.ignore();
 	std::getline(std::cin, cityName);
 	std::cout << "                                 Enter street number :";

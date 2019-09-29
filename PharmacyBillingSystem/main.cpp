@@ -11,13 +11,13 @@ int main()
 {
 	connection = mysql_init(nullptr);
 
-	mysql_real_connect(connection, "localhost", "root", "", "billing_system", 3306, NULL, 0);
+	mysql_real_connect(connection, "localhost", "root", "", "billing_system", 3306, nullptr, 0);
+
 	createRelations();
 
 	menuOutput(menu());
 
 	mysql_close(connection);
 
-	system("pause");
 	return 0;
 }

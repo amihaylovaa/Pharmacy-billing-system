@@ -13,7 +13,7 @@ public:
 	void setName(std::string);
 
 private:
-	void validateName();
+	void validateName(std::string);
 
 private:
 	std::string name;

@@ -13,13 +13,12 @@ public:
 	unsigned short getNumber() const;
 	City getCity() const;
 	void setName(std::string);
-	void setNumber(char);
 
-private: 
-	void validateName(std::string);
+private:
+	void validateStreet(std::string);
 
 private:
 	std::string name;
-    unsigned short number;
+	unsigned short number;
 	City city;
 };
