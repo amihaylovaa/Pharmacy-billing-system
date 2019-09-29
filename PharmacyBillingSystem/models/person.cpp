@@ -1,29 +1,31 @@
 #include "models/person.hpp"
+#include "exceptions/invalid_argument_exception.hpp"
 
-Person::Person(std::string firstName_, std::string lastName_, Address& address_)
-	: firstName(firstName_), lastName(lastName_), address(address_)
+Person::Person(std::string firstName_, std::string lastName_, Address& address_) : address(address_)
 {
-	validateName();
+	validateName(firstName_);
+	validateName(lastName_);
+
+	firstName = firstName_;
+	lastName = lastName_;
 }
 
-Person::Person() { }
-
-void Person::validateName()
+Person::Person()
 {
-	//if (firstName.empty() || lastName.empty())
-	//	throw new std::invalid_argument("Empty names are not allowed");
+	firstName = nullptr;
+	lastName = nullptr;
 }
 
 void Person::setFirstName(std::string firstName_)
 {
+	validateName(firstName_);
 	firstName = firstName_;
-	validateName();
 }
 
 void Person::setLastName(std::string lastName_)
 {
+	validateName(lastName_);
 	lastName = lastName_;
-	validateName();
 }
 
 void Person::setAddress(Address& address_)
@@ -36,3 +38,9 @@ std::string Person::getFirstName() const { return firstName; }
 std::string Person::getLastName() const { return lastName; }
 
 Address Person::getAddress() const { return address; }
+
+void Person::validateName(std::string name)
+{
+	if (name.empty())
+		throw new invalid_argument_exception("Empty first or last name");
+}

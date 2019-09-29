@@ -1,21 +1,38 @@
 #include "models/street.hpp"
+#include "exceptions/invalid_argument_exception.hpp"
 
-Street::Street(std::string name_, unsigned short number_, City& city_) : name(name_), city(city_)
+Street::Street(std::string name_, unsigned short number_, City& city_) : city(city_)
 {
 	number = number_;
+
+	validateStreet(name_);
+
+	name = name_;
 }
 
-Street::Street() {}
+Street::Street()
+{
+	name = nullptr;
+	number = 0;
+}
 
-Street::Street(const Street& street) : name(street.name), city(street.city)
+Street::Street(const Street& street) : city(street.city)
 {
 	number = street.number;
+
+	validateStreet(street.name);
+
+	name = street.name;
 }
 
 Street& Street::operator=(const Street& street)
 {
-	name = street.name;
 	city = street.city;
+	number = street.number;
+
+	validateStreet(street.name);
+
+	name = street.name;
 
 	return *this;
 }
@@ -26,19 +43,17 @@ unsigned short Street::getNumber() const { return number; }
 
 City Street::getCity() const { return city; }
 
-void Street::setNumber(char number_)
-{
-	number = number_;
-}
-
 void Street::setName(std::string name_)
 {
-	validateName(name_);
+	validateStreet(name_);
 	name = name_;
 }
 
-void Street::validateName(std::string name)
+void Street::validateStreet(std::string name)
 {
 	if (name.empty())
-		throw new std::invalid_argument("The name is now allowed to be null");
+		throw new invalid_argument_exception("Street name can not be empty");
+
+	if (number == 0)
+		throw new invalid_argument_exception("Street number can not be zero");
 }

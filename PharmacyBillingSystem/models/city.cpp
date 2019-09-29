@@ -1,30 +1,41 @@
 #include "models/city.hpp"
+#include "exceptions/invalid_argument_exception.hpp"
 
-City::City(std::string name_) : name(name_)
+City::City(std::string name_)
 {
-	validateName();
+	validateName(name_);
+	name = name_;
 }
 
-City::City() { }
+City::City() { name = nullptr; }
 
-City::City(const City& city) : name(city.name)
+City::City(const City& city)
 {
-	validateName();
+	validateName(city.name);
+
+	name = city.name;
 }
 
 City& City::operator=(const City& city)
 {
+	validateName(city.name);
+
 	name = city.name;
 
 	return *this;
 }
 
-void City::validateName()
-{
-	//if (name.empty())
-		//throw new std::invalid_argument("City is not allowed to be empty");
-}
-
 std::string City::getName() const { return name; }
 
-void City::setName(std::string name_) { name = name_; }
+void City::setName(std::string name_)
+{
+	validateName(name_);
+
+	name = name_;
+}
+
+void City::validateName(std::string name)
+{
+	if (name.empty())
+		throw new invalid_argument_exception("City name is can not be empty");
+}

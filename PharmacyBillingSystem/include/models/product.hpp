@@ -17,7 +17,7 @@ public:
 	void setQuantity(unsigned short);
 
 private:
-	void validateName(std::string);
+	void validateProduct(std::string);
 
 private:
 	std::string name;
