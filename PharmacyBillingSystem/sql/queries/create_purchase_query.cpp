@@ -4,8 +4,6 @@
 
 void createPurchasesQuery(std::vector<Purchase>& purchases, unsigned int pharmacistId, unsigned int userId)
 {
-	std::vector<Purchase>::iterator i;
-
 	for (unsigned int i = 0; i < purchases.size(); i++)
 	{
 		Product product = purchases.at(i).getProduct();

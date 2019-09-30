@@ -1,6 +1,6 @@
 #include "models/purchase.hpp"
 
-Purchase::Purchase(unsigned short quantity_, Product& product_)
+Purchase::Purchase(Product& product_, unsigned short quantity_)
 	: product(product_)
 {
 	quantity = quantity_;
