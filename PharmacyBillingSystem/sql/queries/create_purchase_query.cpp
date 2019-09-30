@@ -11,7 +11,7 @@ void createPurchasesQuery(std::vector<Purchase>& purchases, unsigned int pharmac
           INSERT INTO purchase (product_id, customer_id, pharmacist_id, quantity)\
           SELECT product.id, " + std::to_string(userId) + ", \
           " + std::to_string(pharmacistId) + ", " + std::to_string(purchases.at(i).getQuantity()) + "\
-           FROM product \
+          FROM product \
           WHERE product.name = '" + product.getName() + "';";
 
 		executeQuery(queryMYSQL);

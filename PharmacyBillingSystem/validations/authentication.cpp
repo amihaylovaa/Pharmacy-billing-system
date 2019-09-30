@@ -6,9 +6,6 @@
 #include "global/global_counter.hpp"
 #include "create/person utils/add_person.hpp"
 
-MYSQL_RES* result;
-unsigned int counter = 1;
-
 void authentication(unsigned int id, PersonType typeOfPerson)
 {
 	result = mysql_store_result(connection);

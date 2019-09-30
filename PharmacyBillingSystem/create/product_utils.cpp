@@ -27,32 +27,34 @@ Product getProduct(std::string name, unsigned short requestedQuantity)
 	constexpr int price_idx = 2;
 	double price = atof(row[price_idx]);
 	
-	Product product(name, price, getAvailableQuantity(name, requestedQuantity, row));
+	Product product(name, price, findAvailableQuantity(name, requestedQuantity, row));
+
+	mysql_free_result(result);
 
 	return product;
 }
 
-unsigned short getAvailableQuantity(std::string productName, unsigned short productQuantity, MYSQL_ROW row)
+unsigned short findAvailableQuantity(std::string name, unsigned short requestedQuantity, MYSQL_ROW row)
 {
 	constexpr int quantity_idx = 3;
 	unsigned short availableQuantity = atoi(row[quantity_idx]);
 
-	if (availableQuantity <= productQuantity)
+	if (availableQuantity <= requestedQuantity)
 	{
-		deleteProduct(productName);
+		deleteProduct(name);
 		return availableQuantity;
 	}
 
 	else
 	{
-		decrementQuantity(productName, productQuantity);
-		return productQuantity;
+		decrementQuantity(name, requestedQuantity);
+		return requestedQuantity;
 	}
 }
 
 void deleteProduct(std::string productName)
 {
-	std::string queryMySQL = "DELETE FROM product\
+	std::string queryMYSQL = "DELETE FROM product\
                               WHERE name = '" + productName + "';";
-	executeQuery(queryMySQL);
+	executeQuery(queryMYSQL);
 }
