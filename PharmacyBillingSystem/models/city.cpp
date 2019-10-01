@@ -1,5 +1,5 @@
 #include "models/city.hpp"
-#include "exceptions/invalid_argument_exception.hpp"
+#include "exceptions/inappropriate_argument.hpp"
 
 City::City(std::string name_)
 {
@@ -37,5 +37,5 @@ void City::setName(std::string name_)
 void City::validateName(std::string name)
 {
 	if (name.empty())
-		throw new invalid_argument_exception("City name is can not be empty");
+		throw new inappropriate_argument("City name is can not be empty");
 }

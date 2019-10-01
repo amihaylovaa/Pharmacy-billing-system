@@ -12,7 +12,5 @@ bool isProductAvailable(std::string productName)
 	executeQuery(queryMYSQL);
 	result = mysql_store_result(connection);
 
-	if (result->row_count == 0)
-		return false;
-	return true;
+	return result->row_count != 0;
 }

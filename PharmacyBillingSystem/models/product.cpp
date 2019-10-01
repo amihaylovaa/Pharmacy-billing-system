@@ -1,5 +1,5 @@
 #include "models/product.hpp"
-#include "exceptions/invalid_argument_exception.hpp"
+#include "exceptions/inappropriate_argument.hpp"
 
 Product::Product(std::string name_, double price_, unsigned short quantity_)
 {
@@ -21,13 +21,15 @@ Product::Product()
 Product::Product(std::string name_, double price_) : name(name_)
 {
 	price = price_;
-	quantity = 0;
+	quantity = 1;
+	validateProduct(name);
 }
 
 Product::Product(std::string name_, unsigned short quantity_) : name(name_)
 {
 	quantity = quantity_;
-	price = 0;
+	price = 1;
+	validateProduct(name);
 }
 
 Product::Product(const Product& product)
@@ -62,11 +64,11 @@ void Product::setPrice(double price_){ price = price_; }
 
 void Product::setQuantity(unsigned short quantity_){ quantity = quantity_; }
 
-void Product::validateProduct(std::string)
+void Product::validateProduct(std::string name)
 {
 	if (name.empty())
-		throw new invalid_argument_exception("Product name can not be empty");
+		throw new inappropriate_argument("Product name can not be empty");
 
 	if(quantity == 0 || price == 0.00)
-		throw new invalid_argument_exception("Product price or quantity can not be zero");
+		throw new inappropriate_argument("Product price or quantity can not be zero");
 }

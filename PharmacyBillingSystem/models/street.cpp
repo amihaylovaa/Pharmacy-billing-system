@@ -1,5 +1,5 @@
 #include "models/street.hpp"
-#include "exceptions/invalid_argument_exception.hpp"
+#include "exceptions/inappropriate_argument.hpp"
 
 Street::Street(std::string name_, unsigned short number_, City& city_) : city(city_)
 {
@@ -52,8 +52,8 @@ void Street::setName(std::string name_)
 void Street::validateStreet(std::string name)
 {
 	if (name.empty())
-		throw new invalid_argument_exception("Street name can not be empty");
+		throw new inappropriate_argument("Street name can not be empty");
 
 	if (number == 0)
-		throw new invalid_argument_exception("Street number can not be zero");
+		throw new inappropriate_argument("Street number can not be zero");
 }

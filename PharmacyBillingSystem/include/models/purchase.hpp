@@ -7,7 +7,7 @@
 class Purchase
 {
 public:
-	Purchase(unsigned short, Product&);
+	Purchase(Product& ,unsigned short);
 	Purchase(const Purchase&);
 	Purchase();
 	unsigned short getQuantity() const;

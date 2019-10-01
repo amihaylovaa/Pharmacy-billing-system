@@ -22,8 +22,13 @@ Product addProduct()
 Product getProduct(std::string name)
 {
 	MYSQL_ROW row = mysql_fetch_row(result);
-	double price = atof(row[2]);
-	Product product(name, price);
+	char price_idx = 2, quantity_idx = 3;
+	double price = atof(row[price_idx]);
+	unsigned short availableQuantity = atoi(row[quantity_idx]);
+
+	Product product(name, price, availableQuantity);
+
+	mysql_free_result(result);
 
 	return product;
 }

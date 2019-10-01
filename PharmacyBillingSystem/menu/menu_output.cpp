@@ -7,8 +7,6 @@
 #include "create/create_person_type.hpp"
 #include "sql/queries/person_create_query.hpp"
 
-PersonType personType;
-
 void menuOutput(unsigned short choice)
 {    
 	system("cls");

@@ -1,5 +1,5 @@
 #include "models/person.hpp"
-#include "exceptions/invalid_argument_exception.hpp"
+#include "exceptions/inappropriate_argument.hpp"
 
 Person::Person(std::string firstName_, std::string lastName_, Address& address_) : address(address_)
 {
@@ -42,5 +42,5 @@ Address Person::getAddress() const { return address; }
 void Person::validateName(std::string name)
 {
 	if (name.empty())
-		throw new invalid_argument_exception("Empty first or last name");
+		throw new inappropriate_argument("Empty first or last name");
 }
