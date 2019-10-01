@@ -2,8 +2,6 @@
 
  This is a console application which simulates purchases in a pharmacy.
  
-A console application which simulates purchases in a pharmacy.
-
 Both the pharmacist and the customer must have an account in the system in order to use the functionality.
 
 In order to make a purchase :
