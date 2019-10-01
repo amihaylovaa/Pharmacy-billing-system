@@ -1,14 +1,16 @@
 #include <iostream>
 #include <string>
 #include  <vector>
+#include "exceptions/unavailable_product.hpp"
 #include "create/purchase utils/create_bill.hpp"
 #include "create/purchase utils/get_customer_orders.hpp"
 #include "create/product utils/product_utils.hpp"
 #include "sql/queries/create_purchases_query.hpp"
 #include "sql/get_product.hpp"
 #include "validations/is_product_available.hpp"
+#include "sql/queries/decrement_quantity.hpp"
 
-void getCustomerOrders(unsigned int pharmacistId, unsigned int userId)
+std::vector<Product> getCustomerOrders()
 {
 	system("cls");
 	std::string productName;
@@ -17,16 +19,17 @@ void getCustomerOrders(unsigned int pharmacistId, unsigned int userId)
 
 	while(1)
 	{
-		std::cout << "Enter quantity:";
+		std::cout << "                         Enter quantity:";
 		std::cin >> quantity;
+
 		if (quantity == 0) break;
 
-		std::cout << "Enter product:";
+		std::cout << "                        Enter product:";
 		std::cin >> productName;
 
 		products.push_back(Product(productName, quantity));
 	}
-	createPurchases(products, pharmacistId, userId);
+	return products;
 }
 
 void createPurchases(std::vector<Product>& products, unsigned int pharmacistId, unsigned int userId)
@@ -35,11 +38,19 @@ void createPurchases(std::vector<Product>& products, unsigned int pharmacistId, 
 	
 	for (Product product : products)
 	{
-		if (isProductAvailable(product.getName()))
-		{
-			Product prod(getProduct(product.getName(), product.getQuantity()));
+		std::string name = product.getName();
 
-			purchases.push_back(Purchase(prod, prod.getQuantity()));
+		if (isProductAvailable(name))
+		{
+			Product prod = getProduct(name);
+			unsigned short availableQuantity = prod.getQuantity();
+			unsigned short requestedQuantity = product.getQuantity();
+			
+			if (availableQuantity < requestedQuantity)
+				throw new unavailable_product("Insufficient quantity");
+
+				purchases.push_back(Purchase(prod, requestedQuantity));
+				decrementQuantity(name, requestedQuantity);
 		}
 	}
 	createPurchasesQuery(purchases, pharmacistId, userId);

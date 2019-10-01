@@ -1,2 +1,4 @@
 #pragma once
-void getCustomerOrders(unsigned int, unsigned int);
+#include "models/product.hpp"
+
+std::vector<Product> getCustomerOrders();
