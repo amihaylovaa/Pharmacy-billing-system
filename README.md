@@ -12,4 +12,4 @@ In order to make a purchase :
 - make a purchase 
 - add a new customer, if he/she is not authenticated
 
-The data for the people(pharmacist and customer), products, city, street etc. is stored in relational database - MySQL.
+The data for the people(pharmacist and customer), products, city, street etc. is stored in relational database management system   - MySQL.
