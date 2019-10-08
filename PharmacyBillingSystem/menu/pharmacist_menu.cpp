@@ -5,7 +5,7 @@
 #include "create/purchase utils/get_customer_orders.hpp"
 #include "create/purchase utils/create_bill.hpp"
 #include "menu/sign_in.hpp"
-#include "menu/pharmacist_menu_output.hpp"
+#include "menu/pharmacist_menu.hpp"
 #include "validations/menu_validation.hpp"
 #include "sql/queries/add_product_query.hpp"
 #include "sql/queries/create_purchases_query.hpp"
@@ -19,9 +19,9 @@ unsigned short pharmacistOption()
 	while (!isMenuChoiceValid(choice))
 	{
 		system("cls");
-		std::cout << "                             1.Purchase:" << std::endl
-			<< "                                   2.Add new product" << std::endl
-			<< "                                   3.Add new customer";
+		std::cout << "                             1.Purchase:" << std::endl;
+		std::cout << "                             2.Add new product" << std::endl;
+		std::cout << "                             3.Add new customer";
 		std::cin >> choice;
 	}
 	return choice;

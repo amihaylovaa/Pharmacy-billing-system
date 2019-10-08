@@ -1,7 +1,6 @@
 #include <iostream>
 #include <mysql.h>
-#include "menu/menu.hpp"
-#include "menu/menu_output.hpp"
+#include "menu/main_menu.hpp"
 #include "sql/connect.hpp"
 #include "sql/queries/create_database_relations.hpp"
 #include "sql/result.hpp"

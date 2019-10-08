@@ -1,14 +1,14 @@
 #include <iostream>
 #include <string>
 #include "create/person utils/add_person.hpp"
-#include "create/person utils/create_person.hpp"
+#include "create/person utils/person_info_input.hpp"
 #include "create/create_person_type.hpp"
 #include "models/pharmacist.hpp"
 #include "models/customer.hpp"
 #include "sql/queries/person_create_query.hpp"
 
 // Gathers information to create person expecting user input
-Person createPerson(PersonType typeOfPerson)
+Person personInfoInput(PersonType personType)
 {
 	std::string firstName = "";
 	std::string lastName = "";
@@ -29,7 +29,7 @@ Person createPerson(PersonType typeOfPerson)
 	Street street(streetName, streetNumber, city);
 	Address address(street);
 
-	if (typeOfPerson == pharmacist)
+	if (personType == pharmacist)
 	{
 		Pharmacist pharmacist(firstName, lastName, address);
 		return pharmacist;
@@ -43,19 +43,19 @@ Person createPerson(PersonType typeOfPerson)
 }
 
 // Creates person (customer or pharmacist)
-void addPerson(PersonType typeOfPerson)
+void addPerson(PersonType personType)
 {
-	Person person(createPerson(typeOfPerson));
+	Person person(personInfoInput(personType));
 
-	if (typeOfPerson == pharmacist)
+	if (personType == pharmacist)
 	{
 		Pharmacist pharmacist(person.getFirstName(), person.getLastName(), person.getAddress());
-		createPersonQuery(pharmacist, typeOfPerson);
+		createPersonQuery(pharmacist, personType);
 	}
 
-	if (typeOfPerson == customer)
+	if (personType == customer)
 	{
 		Customer customer(person.getFirstName(), person.getLastName(), person.getAddress());
-		createPersonQuery(customer, typeOfPerson);
+		createPersonQuery(customer, personType);
 	}
 }
