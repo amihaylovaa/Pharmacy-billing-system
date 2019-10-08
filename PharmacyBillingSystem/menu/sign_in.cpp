@@ -4,6 +4,7 @@
 #include "sql/execute_query.hpp"
 #include "validations/authentication.hpp"
 
+// Used to sign in an authenticated user
 unsigned int signIn(PersonType typeOfPerson)
 {
 	unsigned int id;

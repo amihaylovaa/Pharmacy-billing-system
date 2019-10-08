@@ -1,3 +1,5 @@
+// Represents implementation to all methods from Street class
+
 #include "models/street.hpp"
 #include "exceptions/inappropriate_argument.hpp"
 

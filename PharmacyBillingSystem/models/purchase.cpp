@@ -1,3 +1,5 @@
+// Represents implementation to all methods from Purchase class
+
 #include "models/purchase.hpp"
 
 Purchase::Purchase(Product& product_, unsigned short quantity_)

@@ -6,11 +6,29 @@
 #include "create/purchase utils/create_bill.hpp"
 #include "menu/sign_in.hpp"
 #include "menu/pharmacist_menu_output.hpp"
-#include "menu/pharmacist_menu.hpp"
+#include "validations/menu_validation.hpp"
 #include "sql/queries/add_product_query.hpp"
 #include "sql/queries/create_purchases_query.hpp"
 #include "global/person_type.hpp"
 
+// Represents the options a pharmaicst got
+unsigned short pharmacistOption()
+{
+	unsigned short choice = 0;
+
+	while (!isMenuChoiceValid(choice))
+	{
+		system("cls");
+		std::cout << "                             1.Purchase:" << std::endl
+			<< "                                   2.Add new product" << std::endl
+			<< "                                   3.Add new customer";
+		std::cin >> choice;
+	}
+	return choice;
+}
+
+// Evaluates the choice from the pharmacist menu input 
+// and navigates the flow of execution
 void pharmacistOptionOutput(unsigned int pharmacistId, unsigned short result)
 {
 	personType = customer;

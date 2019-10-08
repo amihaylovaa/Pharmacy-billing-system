@@ -10,6 +10,8 @@
 #include "validations/is_product_available.hpp"
 #include "sql/queries/decrement_quantity.hpp"
 
+// Gets customer orders 
+// to form a list of requested products
 std::vector<Product> getCustomerOrders()
 {
 	system("cls");

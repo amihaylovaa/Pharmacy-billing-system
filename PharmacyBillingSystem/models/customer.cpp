@@ -1,3 +1,5 @@
+// Represents implementation to all methods from Customer class
+
 #include "models/customer.hpp"
 
 Customer::Customer(std::string firstName, std::string lastName, Address& address)

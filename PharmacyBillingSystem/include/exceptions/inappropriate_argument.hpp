@@ -2,6 +2,8 @@
 #include <iostream>
 #include <stdexcept>
 
+// Represents custom exception that is thrown
+// when inappropriate argument is passed
 class inappropriate_argument : public std::invalid_argument
 {
 public:

@@ -7,6 +7,7 @@
 #include "models/customer.hpp"
 #include "sql/queries/person_create_query.hpp"
 
+// Gathers information to create person expecting user input
 Person createPerson(PersonType typeOfPerson)
 {
 	std::string firstName = "";
@@ -41,6 +42,7 @@ Person createPerson(PersonType typeOfPerson)
 	}
 }
 
+// Creates person (customer or pharmacist)
 void addPerson(PersonType typeOfPerson)
 {
 	Person person(createPerson(typeOfPerson));

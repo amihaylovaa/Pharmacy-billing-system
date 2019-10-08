@@ -1,3 +1,5 @@
+// Represents implementation to all methods from City class
+
 #include "models/city.hpp"
 #include "exceptions/inappropriate_argument.hpp"
 

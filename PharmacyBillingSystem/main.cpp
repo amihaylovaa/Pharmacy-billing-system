@@ -6,13 +6,14 @@
 #include "sql/queries/create_database_relations.hpp"
 #include "sql/result.hpp"
 #include "global/global_counter.hpp"
-#include "create/create_person_type.hpp"
+#include "create//create_person_type.hpp"
 
 MYSQL* connection;
 MYSQL_RES* result;
 PersonType personType;
 unsigned int counter = 1;
 
+// This is the main function of the applicatin
 int main()
 {
 	connection = mysql_init(nullptr);

@@ -1,12 +1,13 @@
 #include "menu/menu_output.hpp"
 #include "menu/sign_in.hpp"
-#include "menu/pharmacist_menu.hpp"
 #include "menu/pharmacist_menu_output.hpp"
 #include "create/person utils/add_person.hpp"
 #include "create/create_person_type.hpp"
 #include "create/create_person_type.hpp"
 #include "sql/queries/person_create_query.hpp"
 
+// Evaluates the choice from the main menu input 
+// and navigates the flow of execution
 void menuOutput(unsigned short choice)
 {    
 	system("cls");

@@ -1,3 +1,5 @@
+// Represents implementation to all methods from Person class
+
 #include "models/person.hpp"
 #include "exceptions/inappropriate_argument.hpp"
 

@@ -1,6 +1,7 @@
 #include <iostream>
 #include "validations/menu_validation.hpp"
 
+// Validates the user output is correct 
 bool isMenuChoiceValid(unsigned short choice)
 {
 	system("cls");

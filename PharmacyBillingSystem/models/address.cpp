@@ -1,3 +1,5 @@
+// Represents implementation to all methods from Address class
+
 #include "models/address.hpp"
 
 Address::Address(Street& street_) : street(street_) { }

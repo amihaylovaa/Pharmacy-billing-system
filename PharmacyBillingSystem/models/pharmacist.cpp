@@ -1,3 +1,5 @@
+// Represents implementation to all methods from Pharmacist class
+
 #include "models/pharmacist.hpp"
 
 Pharmacist::Pharmacist(std::string firstName, std::string lastName, Address& address)

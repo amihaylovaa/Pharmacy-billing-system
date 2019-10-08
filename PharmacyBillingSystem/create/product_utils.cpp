@@ -19,6 +19,7 @@ Product addProduct()
 	return product;
 }
 
+// Gets a product from the database
 Product getProduct(std::string name)
 {
 	MYSQL_ROW row = mysql_fetch_row(result);

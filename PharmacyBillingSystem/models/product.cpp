@@ -1,3 +1,5 @@
+// Represents implementation to all methods from Product class
+
 #include "models/product.hpp"
 #include "exceptions/inappropriate_argument.hpp"
 

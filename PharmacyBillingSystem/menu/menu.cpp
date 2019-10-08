@@ -2,6 +2,9 @@
 #include "menu/menu.hpp"
 #include "validations/menu_validation.hpp"
 
+// Represents the main menu of the application.
+// It is used to gurantee that
+// only authenticated users can access the system
 unsigned short menu()
 {
 	unsigned short choice = 0;

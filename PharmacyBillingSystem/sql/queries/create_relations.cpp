@@ -2,6 +2,7 @@
 #include "sql/connect.hpp"
 #include "sql/queries/create_database_relations.hpp"
 
+// Creates all relation of billing_system database
 void createRelations()
 {
 	mysql_query(connection,
