@@ -1,26 +1,29 @@
 #include <iostream>
 #include <mysql.h>
-#include "menu.hpp"
-#include "welcome.hpp"
-#include "connect.hpp"
-#include "create_database_relations.hpp"
-#include "menu_output.hpp"
+#include "menu/main_menu.hpp"
+#include "sql/connect.hpp"
+#include "sql/queries/create_database_relations.hpp"
+#include "sql/result.hpp"
+#include "global/global_counter.hpp"
+#include "create//create_person_type.hpp"
 
 MYSQL* connection;
+MYSQL_RES* result;
+PersonType personType;
+unsigned int counter = 1;
 
+// This is the main function of the applicatin
 int main()
 {
 	connection = mysql_init(nullptr);
 
-	mysql_real_connect(connection, "localhost", "root", "", "billing_system", 3306, NULL, 0);
-	createRelations();
+	mysql_real_connect(connection, "localhost", "root", "", "billing_system", 3306, nullptr, 0);
 
-	//welcome();
+	createRelations();
 
 	menuOutput(menu());
 
 	mysql_close(connection);
 
-	system("pause");
 	return 0;
 }
